@@ -1,0 +1,55 @@
+<h1>Social Media Impact </h1>
+
+
+<div class="row panel">
+<div style=" height: 400px;  line-height: 400px;  text-align: center;" class="col-lg-1">
+<center>
+	Beer Sales
+</center>
+</div>
+<div style="max-width:800px; max-height:700px; border-right:2px dashed black" class="col-lg-7 panel">
+<div style="max-width:800px; max-height:700px">
+ <canvas id="myChart" width="700" height="450"></canvas>
+</div>
+<script>
+var data = { 
+	     labels: [<% for i in 1..298 do %> <%= @crazy[i] %> , <% end %>],
+         datasets: [{
+            label: '# of Votes',
+            fillColor: [
+               <% for i in 1..298 do %> 'rgba(179,181,198,1)' , <% end %>
+            ],
+            borderColor: [
+                <% for i in 1..298 do %> 'rgba(179,181,198,1)' , <% end %>
+            ],
+            
+            	pointBackgroundColor: "rgba(179,181,198,1)",
+				pointBorderColor: "#fff",
+				pointHoverBackgroundColor: "#fff",
+				pointHoverBorderColor: "rgba(179,181,198,1)"  ,
+				data: [ <% for i in 1..298 do %> <%= @crazy[i] %> , <% end %>]        }]
+    };
+var ctx = document.getElementById("myChart").getContext("2d");
+
+
+
+var myLineChart = new Chart(ctx).Line(data, {
+    //return true from the function to filter out the label
+    labelsFilter: function (value, index, labels) {
+        return (index + 1) % 50 !== 0;
+    }
+});
+</script> 
+ <br/> 
+<center>Time -> </center>
+</div>
+
+<div class="col-lg-4 panel" >
+<h2> Actionable Insights </h2>
+<ul>
+    <li> Distribution does not sound as promising as it used to 3 years earlier.  
+    </li> 
+    <li>The company should probably look into the effectiveness of the distribution channels and mechanism. </li>
+</ul>
+</div>
+</div>
