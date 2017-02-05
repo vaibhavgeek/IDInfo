@@ -1,11 +1,29 @@
-<h1>Display Shelf</h1>
-<style type="text/css">
-	
-	     .overmap { display: none; height: 80px; width: 100px; position: absolute; top:200px; left: 10px; z-index: 99; background-color: white; border: 2px solid black; padding: 7px; }
+<h1>Display Share</h1>
 
-</style>
 
 <div class="row panel">
+<div class="col-lg-8" style=" border-right:2px dashed black" >
+<%= image_tag ("reg.jpg"), :class => 'img-responsive'  %> 
+<h2> What if tool? </h2>
+<div class="input-group">
+<div class="col-lg-5">
+  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"> </div>
+  <div class="col-lg-5">
+  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"> </div>
+<div class="col-lg-2"> 
+  <input type="button" class="btn btn-primary" value="Get Volume Sales" aria-label="Amount (to the nearest dollar)"> 
+
+</div>
+
+</div>
+</div>
+<div class="col-lg-4">
+<h2> Regression Data </h2>
+
+<%= image_tag ("reg_data.jpg") ,  :class => 'img-responsive' %>
+
+</div>
+<div class="row">
 <div style=" height: 400px;  line-height: 400px;  text-align: center;" class="col-lg-1">
 <center>
 	Beer Sales
@@ -64,5 +82,6 @@ var chartInstance = new Chart(ctx, {
     The company should probably look into colour, design and price of the SKUs on primier shelves. 
     </li>
 </ul>
+</div>
 </div>
 </div>
