@@ -1,9 +1,5 @@
-<h1>Distribution percentage </h1>
-<style type="text/css">
-	
-	     .overmap { display: none; height: 80px; width: 100px; position: absolute; top:200px; left: 10px; z-index: 99; background-color: white; border: 2px solid black; padding: 7px; }
+<h1>Social Media Impact </h1>
 
-</style>
 
 <div class="row panel">
 <div style=" height: 400px;  line-height: 400px;  text-align: center;" class="col-lg-1">
@@ -17,36 +13,30 @@
 </div>
 <script>
 var data = { 
-	     labels: [2013, 2014 , 2015 , 2016 ],
+	     labels: [<% for i in 1..298 do %> <%= @crazy[i] %> , <% end %>],
          datasets: [{
-            label: '# Sales',
+            label: '# of Votes',
             fillColor: [
-                'rgba(179,181,198,1)' ,  'rgba(179,181,198,1)' ,  'rgba(179,181,198,1)' , 'rgba(179,181,198,1)'
+               <% for i in 1..298 do %> 'rgba(179,181,198,1)' , <% end %>
             ],
             borderColor: [
-               'rgba(179,181,198,1)' ,  'rgba(179,181,198,1)' ,  'rgba(179,181,198,1)' , 'rgba(179,181,198,1)'
+                <% for i in 1..298 do %> 'rgba(179,181,198,1)' , <% end %>
             ],
             
             	pointBackgroundColor: "rgba(179,181,198,1)",
 				pointBorderColor: "#fff",
 				pointHoverBackgroundColor: "#fff",
 				pointHoverBorderColor: "rgba(179,181,198,1)"  ,
-				data: [ 0.723 , 0.630 , 0.674 , 0.55]        }]
+				data: [ <% for i in 1..298 do %> <%= @crazy[i] %> , <% end %>]        }]
     };
 var ctx = document.getElementById("myChart").getContext("2d");
 
 
-var chartInstance = new Chart(ctx, {
-    type: 'line',
-    data: data,
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
+
+var myLineChart = new Chart(ctx).Line(data, {
+    //return true from the function to filter out the label
+    labelsFilter: function (value, index, labels) {
+        return (index + 1) % 50 !== 0;
     }
 });
 </script> 

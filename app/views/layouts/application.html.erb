@@ -4,7 +4,7 @@
     <title>AbInBev Driver Analysis</title>
     <%= csrf_meta_tags %>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.js"></script>
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -33,7 +33,10 @@
             <%= link_to  "Display Shelf" , home_three_path %>
             </li>
             <li>
-            <%= link_to  "Display Shelf" , home_four_path %>
+            <%= link_to  "Price Per Volume" , home_five_path %>
+            </li>
+            <li>
+            <%= link_to  "Social Media Impact" , home_four_path %>
             </li>
           </ul>
 
